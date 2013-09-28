@@ -74,6 +74,28 @@ describe('#Prompt', function() {
 		
 	});
 
+	describe('Prompt attributes', function() {
+
+		it('should have chalk embeded', function() {
+			assert(Prompt.chalk, 'Did not include chalk');
+		});
+
+		it('should have boolean helpers', function() {
+			assert(Prompt.isBool, 'Did not have isBool regex');
+			assert(Prompt.filterBool, 'Did not have filterBool function');
+
+			assert(Prompt.isBool.test('y'), 'Did not evaluate y as a boolean response');
+			assert(Prompt.isBool.test('yes'), 'Did not evaluate yes as a boolean response');
+			assert(Prompt.isBool.test('n'), 'Did not evaluate n as a boolean response');
+			assert(Prompt.isBool.test('no'), 'Did not evaluate no as a boolean response');
+
+			assert.equal(Prompt.filterBool('y'), true, 'Did not correctly convert y to true');
+			assert.equal(Prompt.filterBool('yes'), true, 'Did not correctly convert yes to true');
+			assert.equal(Prompt.filterBool('n'), false, 'Did not correctly convert n to false');
+			assert.equal(Prompt.filterBool('no'), false, 'Did not correctly convert no to false');
+		});
+	});
+
 	describe('prompt.ask()', function() {
 
 		var prompt,
@@ -190,6 +212,25 @@ describe('#Prompt', function() {
 
 			});
 
+			it('should handel boolean questions', function(done) {
+
+				prompt.ask({
+					question: 'Yes or no?',
+					boolean: true
+				}, function(err, res) {
+					assert.equal(err, null, 'Threw an error...hmmmm');
+					assert.equal(res, true, 'Input was not true as was expected');
+					done();
+				});
+				
+				process.nextTick(function() {
+					input.write('Test input.\n');
+					process.nextTick(function() {
+						input.write('y\n');
+					});
+				});
+
+			});
 		});
 
 		describe('Asking multiple questions', function() {
@@ -270,6 +311,40 @@ describe('#Prompt', function() {
 							input.write('\n');
 							process.nextTick(function() {
 								input.write('\n');
+							});
+						});
+					});
+				});
+
+			});
+
+			it('should ask for confirmation', function(done) {
+				
+				prompt.ask([{
+					question: 'Question 1'
+				}, {
+					question: 'Question 2',
+					key: 2
+				}], {
+					confirm: true
+				}, function (err, res) {
+					done();
+				});
+				
+				process.nextTick(function() {
+					input.write('Answer 1\n');
+					process.nextTick(function() {
+						input.write('Answer 2\n');
+						process.nextTick(function() {
+							input.write('N\n');
+							process.nextTick(function() {
+								input.write('Answer 12\n');
+								process.nextTick(function() {
+									input.write('Answer 22\n');
+									process.nextTick(function() {
+										input.write('yes\n');
+									});
+								});
 							});
 						});
 					});
