@@ -3,19 +3,19 @@
 Node.js prompts like you always wanted.  Style them to your heart's content using [Chalk](https://github.com/sindresorhus/chalk), an amazing CLI package for colors and text styling.  Features include:
 
 - Default options
-- Input validation (using regexe's or functions)
-- Input filters (both before validation and after)
+- Input validation *(using regex's or functions)*
+- Input filters *(both before validation and after)*
 - Required fields
-- Input attempt limits (think limiting password tries)
+- Input attempt limits *(think limiting password tries)*
 - Ask single or multiple questions
-- When asking multiple questions, subsequent questions can be dependant on previous input.  This allows for simple prompt path logic.
+- When asking multiple questions, subsequent questions can be dependant on previous input.  Allows for simple logic in prompt path.
 - Configurable prefixs and suffixes
 - Custom error messaging
 - Input timeouts
 - Per-prompt configuration
 - Convient error handeling
 - 100% test coverage
-- (Coming Soon) Multiple choice questions
+- **(Coming Soon)** Multiple choice questions
 
 # Examples
 
@@ -139,4 +139,4 @@ $ grunt coverage
 
 # Contributions
 
-Please contribute.  Please make pull requests against the develop branch.
+Please contribute.  Make pull requests against the develop branch.
