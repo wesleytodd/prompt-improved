@@ -1,6 +1,6 @@
 {
   "name": "prompt-improved",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "Prompts for beautiful and configurable CLI interfaces",
   "main": "lib/index.js",
   "scripts": {
