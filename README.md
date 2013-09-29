@@ -16,7 +16,7 @@ Node.js prompts like you always wanted.  Style them to your heart's content usin
 - Input timeouts
 - Per-prompt configuration
 - Convient error handeling
-- 100% test coverage
+- >99% test coverage
 - **(Coming Soon)** Multiple choice questions
 
 # Examples
