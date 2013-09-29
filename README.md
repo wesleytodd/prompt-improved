@@ -3,6 +3,7 @@
 Node.js prompts like you always wanted.  Style them to your heart's content using [Chalk](https://github.com/sindresorhus/chalk), an amazing CLI package for colors and text styling.  Features include:
 
 - Default options
+- Boolean questions *(simple y/n answers get converted to true/false)*
 - Input validation *(using regex's or functions)*
 - Input filters *(both before validation and after)*
 - Required fields
@@ -104,12 +105,7 @@ prompt.ask([{
 	attempts: 3,
 	required: true,
 	default: 'Y',
-	validate: /^(?:y(?:es)?|n(?:o)?)$/i,
-	after: function(value) {
-		value = value.toLowerCase();
-		if (value === 'y' || value === 'yes') return true;
-		return false;
-	}
+	boolean: true
 }{
 	question: 'Something where the first letter should be uppercase',
 	key: 'answer-key1',
