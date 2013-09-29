@@ -12,6 +12,7 @@ Node.js prompts like you always wanted.  Style them to your heart's content usin
 - When asking multiple questions, subsequent questions can be dependant on previous input.  Allows for simple logic in prompt path.
 - Configurable prefixs and suffixes
 - Custom error messaging
+- Confirmation prompt for input of multiple questions
 - Input timeouts
 - Per-prompt configuration
 - Convient error handeling
