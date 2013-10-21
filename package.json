@@ -6,7 +6,10 @@
   "scripts": {
     "test": "node_modules/istanbul/lib/cli.js test node_modules/mocha/bin/_mocha --dir test/coverage"
   },
-  "repository": "",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/wesleytodd/prompt-improved.git"
+  },
   "author": "Wes Todd",
   "license": "BSD",
   "dependencies": {
