@@ -55,9 +55,10 @@ module.exports = function(grunt) {
 	// Register npm tasks
 	[
 		'grunt-contrib-connect',
-		'grunt-contrib-watch'
+		'grunt-contrib-watch',
+		'grunt-mocha-istanbul-coveralls'
 	].forEach(grunt.loadNpmTasks);
 
-	grunt.loadTasks('tasks');
+	//grunt.loadTasks('tasks');
 
 };
