@@ -14,7 +14,7 @@
   "license": "BSD",
   "dependencies": {
     "read": "~1.0.4",
-    "chalk": "~0.2.1"
+    "chalk": "*"
   },
   "devDependencies": {
     "grunt": "~0.4.1",
