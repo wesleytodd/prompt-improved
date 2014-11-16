@@ -1,3 +1,5 @@
+# This is depricated.  Use https://github.com/SBoudrias/Inquirer.js
+
 # Prompts Improved
 
 Node.js prompts like you always wanted.  Style them to your heart's content using [Chalk](https://github.com/sindresorhus/chalk), an amazing CLI package for colors and text styling.  Features include:
